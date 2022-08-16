@@ -1,6 +1,27 @@
 {
   "name": "ngx-stacks-editor",
+  "description": "An Angular wrapper for the Stacks Editor by StackOverflow",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "Adam Plocher",
+  "keywords": [
+    "markdown",
+    "angular markdown",
+    "angular-markdown",
+    "ng-markdown",
+    "ngx-markdown",
+    "ng-stacks",
+    "ngx-stacks",
+    "stacks editor",
+    "stacks-editor",
+    "stacks",
+    "angular stacks",
+    "angular-stacks",
+    "ngx stacks",
+    "ngx-stacks",
+    "aplocher",
+    "adam plocher"
+  ],
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0",
