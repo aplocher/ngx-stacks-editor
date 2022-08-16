@@ -1,23 +1,27 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { StacksEditor } from '@stackoverflow/stacks-editor';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { StacksEditor, StacksEditorOptions } from '@stackoverflow/stacks-editor';
 
 import "@stackoverflow/stacks";
 
 @Component({
   selector: 'ngx-stacks-editor',
   template: `
-    <div id="editor-container"></div>
+    <div #stacksEditor></div>
   `,
-  styleUrls: [
-    "ngx-stacks-editor.component.css"
-  ],
+  styleUrls: ["ngx-stacks-editor.component.css"],
   encapsulation: ViewEncapsulation.None
 })
-export class NgxStacksEditorComponent implements OnInit {
+export class NgxStacksEditorComponent implements AfterViewInit {
+
+  @Input() content: string;
+  @Input() options: StacksEditorOptions;
+
+  @ViewChild("stacksEditor") stacksEditor: ElementRef<HTMLElement>;
 
   constructor() { }
 
-  ngOnInit(): void {
-    new StacksEditor(document.querySelector("#editor-container"), 'test');
+  ngAfterViewInit(): void {
+    let stacksNativeElement = this.stacksEditor.nativeElement;
+    new StacksEditor(stacksNativeElement, this.content, this.options);
   }
 }
