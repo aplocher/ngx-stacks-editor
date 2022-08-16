@@ -1,7 +1,4 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ngx-stacks-editor",
-  "lib": {
-    "entryFile": "src/public-api.ts"
-  }
+  "dest": "../../dist/ngx-stacks-editor"
 }
